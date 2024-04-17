@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.window {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #37474f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .todobox {
+    width: 40%;
+    min-height: 20vh;
+    border-radius: 30px;
+    border: purple;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+
+    .listheading {
+      margin: 20px 20px 30px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #37474f;
+      font-size: x-large;
+      h2 {
+        margin-left: 10px;
+      }
+    }
+
+    .row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      background: #eceff1;
+      border-radius: 30px;
+
+      input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+        font-weight: 600;
+        color: #37474f;
+      }
+
+      button {
+        // border: none;
+        outline: none;
+        padding: 15px 50px;
+        background: #37474f;
+        border-radius: 30px;
+        color: #eceff1;
+        cursor: pointer;
+      }
+    }
+
+    ul {
+      padding: 20px 30px;
+
+      li {
+        list-style: none;
+        user-select: none;
+        cursor: pointer;
+        color: #37474f;
+        font-size: 20px;
+        padding: 12px 12px 12px 50px;
+        position: relative;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-image: url(../media/unchecked.png);
+        background-size: cover;
+        background-position: center;
+        top: 10px;
+        left: 8px;
+      }
+
+      .checked {
+        text-decoration: line-through;
+        color: #67828f;
+      }
+
+      .checked::before {
+        background-image: url(../media/checkedb.png);
+      }
+
+      span {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 22px;
+        color: #37474f;
+        padding: 2px 8px;
+        border-radius: 50%;
+      }
+
+      span:hover {
+        background-color: #eceff1;
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .window {
+    .todobox {
+      margin-top: -100px;
+      width: 80%;
+      .listheading {
+        font-size: medium;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        // flex-direction: column;
+        flex-wrap: wrap;
+        input {
+          width: 100%;
+        }
+        button {
+          padding: 15px 28px;
+        }
+      }
+    }
+  }
+}
